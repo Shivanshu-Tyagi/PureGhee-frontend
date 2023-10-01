@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+    .login-container {
+      margin: 100px auto;
+      width: 300px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .login-container h2 {
+      text-align: center;
+    }
+    .login-form input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .login-form button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .login-form button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Admin Login</h2>
+    <form class="login-form" onsubmit="return login()" method="post">
+      <input type="text" placeholder="Username" id="username" required><br>
+      <input type="password" placeholder="Password" id="password" required><br>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <script>
+    function login() {
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+
+      // Perform your login logic here, e.g., check username and password against a database.
+      // For simplicity, let's assume successful login if username and password are both "admin".
+      if (username === 'admin' && password === 'admin123') {
+        // Redirect to the admin page upon successful login
+        window.location.href = './admin.html';
+        return false; // Prevent the form from actually submitting
+      } else {
+        alert('Invalid username or password. Please try again.');
+        return false; // Prevent the form from actually submitting
+      }
+    }
+  </script>
+</body>
+</html>
