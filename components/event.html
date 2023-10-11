@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ghee Sample Giveaway</title>
+  <link rel="stylesheet" type="text/css" href="../components/assets/css/styles.css">
+          <!--=============== REMIXICONS ===============-->
+          <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+      color: #333;
+    }
+
+    section {
+      background-color: #0d5e14;
+      color: #ffffff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    section h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 30px;
+      gap: 100px;
+    }
+    .popup {
+                       width: 250px;
+                       height: 150px;
+                       display: none;
+                       position: fixed;
+                       background:hsl(127, 20%, 18%); 
+                       top: 24%;
+                       right: 0;
+                       left: 90%;
+                       transform: translate(-50%, -50%);
+                      color: white;
+                       padding: 20px;
+                       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+                   }
+                   
+                   .popup-close {
+                       float: right;
+                       cursor: pointer;
+                   }
+                   
+                   .popup-content {
+                       padding: 10px;
+                   }
+                   
+                   .popup-content p {
+              
+                       margin-top: 10px;
+                  text-align: center;
+                   }
+                   .popup-content button{
+                    color: white;
+                    margin-top: 40px;
+                    margin-left: 50px;
+                    border: none;
+                    padding: 8px 15px;
+                    text-transform: uppercase;
+                    background-color: #0a9737;
+                    letter-spacing: 1px;
+                   }
+
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+    .details-section,
+    .attention-section {
+      background: #ffffff;
+      border-radius: 15px;
+      padding: 30px;
+      margin: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+    }
+    .attention-section{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .attention-section h2 {
+      text-align: center;
+      font-size: 32px;
+    }
+
+    .attention-section h4 {
+      text-align: center;
+      font-size: 22px;
+    }
+
+   
+    label {
+      font-weight: bold;
+      color: #0d5e14;
+    }
+
+    input {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #0d5e14;
+      border-radius: 5px;
+    }
+
+    .button {
+      padding: 15px 30px;
+      background: #0d5e14;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      font-size: 18px;
+    }
+
+    .button:hover {
+      background: #083e0a;
+    }
+
+    a {
+      text-decoration: none;
+      color: #0d5e14;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: #083e0a;
+    }
+
+    footer {
+      background-color: #0d5e14;
+      color: #ffffff;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .insta,
+    .join {
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+    }
+
+    .insta h6 {
+      font-size: 20px;
+      margin-top: -2px;
+      text-align: center;
+      font-family: cursive;
+    }
+
+    .instabutton {
+      margin-top: 10px;
+    }
+    
+    @media (max-width: 768px) {
+      main {
+        grid-template-columns: 1fr; /* Set grid to 1 column (1fr) */
+        padding: 10px; /* Adjust padding */
+        gap: 20px; /* Adjust gap */
+      }
+
+      .attention-section,
+      .details-section {
+        width: 100%;
+        margin: 10px 0;
+      }
+    }
+
+    @media (max-width: 576px) {
+      main {
+        padding: 10px;
+      }
+
+      .attention-section h2,
+      .attention-section h4 {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav container">
+           <div class="nav__data">
+              <a href="#" class="nav__logo">
+                Pure Ghee
+              </a>
+              <div  class="user_info large" id="user-info"><a href="#"><i class="ri-shopping-cart-2-line"></i></a>
+                 <a href="#" onclick="togglePopup(event)"><i class="ri-user-3-line"></i></a>
+              </div>
+              <div class="nav__toggle" id="nav-toggle">
+                 <i class="ri-menu-line nav__burger"></i>
+                 <i class="ri-close-line nav__close"></i>
+              </div>
+           </div>
+
+           <!--=============== NAV MENU ===============-->
+           <div class="nav__menu" id="nav-menu">
+              <ul class="nav__list">
+                 <li><a href="./home.html" class="nav__link">Home</a></li>
+
+                 <li><a href="./allProducts.html" class="nav__link">Products</a></li>
+
+               
+                 <!--=============== DROPDOWN 2 ===============-->
+                 <li class="dropdown__item">
+                    <a href="./event.html" class="nav__link">
+                       Event
+                    </a>
+
+                    <!-- <ul class="dropdown__menu">
+                       <li>
+                          <a href="#" class="dropdown__link">
+                             <i class="ri-user-line"></i> Affiliate
+                          </a>                          
+                       </li>
+
+                       <li>
+                          <a href="" class="dropdown__link">
+                             <i class="ri-bank-line"></i></i> 
+                          </a>
+                       </li>
+
+                      
+                    </ul> -->
+                 </li>
+
+                 <li><a href="../referAndEarn.html" class="nav__link"><i class="ri-bank-line"></i>Refer & Earn</a></li>
+              </ul>
+           </div>
+           
+           <div  class="user_info1" id="user-info">
+              <a href="#"><i class="ri-shopping-cart-2-line"></i></a>
+              <a href="#" onclick="togglePopup(event)"><i class="ri-user-3-line"></i></a>
+           </div>
+           <div class="popup" id="user-popup">
+              <span class="popup-close" onclick="togglePopup(event)">&times;</span>
+              <div class="popup-content">
+                  <!-- User name and logout button -->
+                  <p>User Name</p>
+                  <button onclick="logout()">Logout</button>
+              </div>
+          </div>
+        </nav>
+     </header>
+  <section>
+    <h1>Ghee Sample Giveaway</h1>
+  </section>
+
+  <main>
+    <div class="attention-section">
+      <h2>Attention Ghee Lovers!</h2>
+      <h4>You Can Win a Ghee Sample!</h4>
+      <p>Are you a fan of pure and authentic ghee? We're giving away 100 samples to lucky winners. Don't miss out on this golden opportunity!</p>
+      <p><strong>Why choose our ghee?</strong></p>
+      <ul>
+        <li>100% Pure and Organic</li>
+        <li>Rich, Nutty Flavor</li>
+        <li>Loaded with Nutrients</li>
+        <li>Made with Love and Tradition</li>
+      </ul>
+      <div class="insta">
+        <h6>Follow us on Instagram for more updates and deals!</h6>
+        <button class=" button instabutton " type="button" onclick="openInstagram()">Follow on Instagram</button>
+      </div>
+    </div>
+    <div class="content">
+      <div class="details-section">
+        <h2>Enter Your Details</h2>
+        <form id="entryForm">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required><br>
+
+          <label for="address">Address:</label>
+          <input type="text" id="address" name="address" required><br>
+
+          <label for="pincode">Pincode:</label>
+          <input type="text" id="pincode" name="pincode" required><br>
+
+          <label for="mobile">Mobile Number:</label>
+          <input type="tel" id="mobile" name="mobile" required><br>
+          <button class="button" type="submit">Join</button>
+          <!-- <div class="join">
+            
+          </div> -->
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Ghee Sample Giveaway</p>
+  </footer>
+
+  <script src="./assets/js/main.js"></script>
+  <script>
+    function togglePopup(event) {
+event.preventDefault();
+const popup = document.getElementById('user-popup');
+const username = localStorage.getItem('username');  // Get the username
+const popupContent = document.querySelector('.popup-content p');
+popupContent.textContent = `Welcome, ${username || 'User'}!`; // Display the username
+
+popup.style.display = (popup.style.display === 'block') ? 'none' : 'block';
+}
+
+function logout() {
+// Clear the stored username from localStorage
+localStorage.removeItem('username');
+
+// Redirect to the login page
+window.location.href = '../register.html';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+const userPopup = document.getElementById('user-popup');
+
+// Check if the user is logged in (has a stored username)
+const storedUsername = localStorage.getItem('username');
+
+if (!storedUsername) {
+   // User is not logged in, redirect to the login page
+   window.location.href = '../register.html';
+}
+
+// Display the stored username in the popup
+const userNameElement = document.querySelector('.popup-content p');
+if (userNameElement) {
+   userNameElement.textContent = storedUsername;
+}
+});
+
+
+ </script>
+
+  <script>
+    document.getElementById('entryForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const formData = {
+        name: document.getElementById('name').value,
+        address: document.getElementById('address').value,
+        pincode: document.getElementById('pincode').value,
+        mobile: document.getElementById('mobile').value
+      };
+
+      console.log('FormDataObject:', formData);
+
+      const endpoint = 'https://pure-ghee-api.onrender.com/api/auth/submit-form';
+
+      fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then((data) => {
+          console.log('Response:', data);
+          alert('Form submitted successfully!');
+          document.getElementById('entryForm').reset();
+        })
+        .catch((error) => {
+          console.error('Error details:', error);
+          alert('Form submission failed. Please try again later.');
+        });
+    });
+  </script>
+
+</body>
+
+</html>

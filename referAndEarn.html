@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./components/assets/css/styles.css">
+    <link rel="stylesheet" href="./components/assets/css/stylehome.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5fdf4;
+            margin: 0;
+            /* padding: 20px; */
+        }
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            margin-bottom: 100px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            /* margin-bottom: 20px; */
+        }
+        .containerR {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            max-width: 600px;
+            width: 100%;
+            margin: 0 auto;
+            background-color: #f5fdf4;
+            padding: 30px;
+            border-radius: 8px;
+            /* box-shadow: 0 0 10px 1px #5dcb6c ; */
+            box-shadow: rgba(12, 46, 15, 0.15) 0px 48px 100px 0px;
+            text-align: center;
+            margin-top: 20px;
+            
+        }
+        .containerR h1 {
+            color: #44BB53;
+            margin-bottom: 10px;
+        }
+        .referral-link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
+        .referral-link input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px 0 0 4px;
+        }
+        .referral-link button {
+            padding: 10px 20px;
+            background-color: #44BB53;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 0 4px 4px 0;
+        }
+        .referral-link button:hover {
+            background-color: #006b07;
+        }
+        .popup {
+                       width: 250px;
+                       height: 150px;
+                       display: none;
+                       position: fixed;
+                       background:hsl(127, 20%, 18%); 
+                       top: 24%;
+                       right: 0;
+                       left: 90%;
+                       transform: translate(-50%, -50%);
+                      color: white;
+                       padding: 20px;
+                       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+                   }
+                   
+                   .popup-close {
+                       float: right;
+                       cursor: pointer;
+                   }
+                   
+                   .popup-content {
+                       padding: 10px;
+                   }
+                   
+                   .popup-content p {
+              
+                       margin-top: 10px;
+                  text-align: center;
+                   }
+                   .popup-content button{
+                    color: white;
+                    margin-top: 40px;
+                    margin-left: 50px;
+                    border: none;
+                    padding: 8px 15px;
+                    text-transform: uppercase;
+                    background-color: #0a9737;
+                    letter-spacing: 1px;
+                   }
+        .referContainer {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 20px;
+        }
+        .referimg {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .referimg img {
+            max-width: 100%;
+            height: auto;
+        }
+        .user-info {
+            display: flex;
+            justify-content: space-between;
+            text-align: left;
+            margin: 20px;
+            
+        }
+        .user-info h3 {
+            color: #44BB53;
+            margin: 0;
+        }
+        .earnings-info {
+            text-align: left;
+            margin-top: 20px;
+        }
+        .earnings-info p {
+            margin: 0;
+            color: #333;
+        }
+        .refHeading{
+            width: 100%;
+            background-color: hsl(123, 24%, 15%);
+            margin-top: 10px;
+    position: relative;
+   height: 20vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+        }
+        .refHeading h1{
+            color: #fff;
+            font-size: 50px;
+        }
+/* Container styles */
+.RAE-middle {
+    background: linear-gradient(45deg, #0a9737, #0d5e14);
+  padding: 20px;
+  /* border-radius: 15px; */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  color: #fff;
+}
+
+.RAE-middle-head {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.RAE-middle-item-container {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+/* Item styles */
+.RAE-middle-item {
+ 
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.RAE-middle-item {
+    cursor: pointer;
+  transform: translateY(-5px);
+  background: linear-gradient(45deg, #05b139, #0a9737);
+  color: #fff;
+}
+
+.image-container {
+  color: #fd267d;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.RAE-middle-text-bold {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.RAE-middle-text-normal {
+  font-size: 14px;
+  font-style: oblique;
+}
+
+/* Icon styles */
+.fas {
+  vertical-align: middle;
+}
+
+/* Hover effect on icons */
+.RAE-middle-item:hover .fas {
+  transform: rotate(45deg);
+}
+.underref{
+    margin-bottom: 60px;
+}
+/* UnderlineR styles for heading */
+.underlineR h1 {
+  text-align: center;
+  text-transform: uppercase;
+  padding-bottom: 5px;
+  position: relative;
+}
+
+.underlineR h1:before {
+  content: "";
+  position: absolute;
+  width: 200px; /* Set the desired width */
+  height: 1px;
+  bottom: 0;
+  left: calc(50% - 100px); /* Adjust to center the line */
+  background-color: #167F38;
+}
+
+.underlineR h1:after {
+  content: "";
+  position: absolute;
+  width: 28px;
+  height: 5px;
+  display: block;
+  background-color: #167F38;
+     bottom: -5px;
+  left: 50%;
+  margin-left: -10px;
+  transform: translateX(-50%);
+}
+/* ... Other styles ... */
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .refHeading h1 {
+    font-size: 30px;
+  }
+
+  .referContainer {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .referimg {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .containerR {
+    padding: 20px;
+  }
+  .underlineR h1 {
+ font-size: 20px;
+}
+
+  .RAE-middle-item-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+    </style>
+    <title>User Profile</title>
+</head>
+<body>
+  <header class="header">
+    <nav class="nav container">
+       <div class="nav__data">
+          <a href="./components/home.html" class="nav__logo">
+            Pure Ghee
+          </a>
+          <div  class="user_info large" id="user-info"><a href="#"><i class="ri-shopping-cart-2-line"></i></a>
+             <a href="#" onclick="togglePopup(event)"><i class="ri-user-3-line"></i></a>
+          </div>
+          <div class="nav__toggle" id="nav-toggle">
+             <i class="ri-menu-line nav__burger"></i>
+             <i class="ri-close-line nav__close"></i>
+          </div>
+       </div>
+
+       <!--=============== NAV MENU ===============-->
+       <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+             <li><a href="./components/home.html" class="nav__link">Home</a></li>
+
+             <li><a href="./components/allProducts.html" class="nav__link">Products</a></li>
+
+           
+             <!--=============== DROPDOWN 2 ===============-->
+             <li class="dropdown__item">
+                <a href="./components/event.html" class="nav__link">
+                   Event
+                </a>
+
+                <!-- <ul class="dropdown__menu">
+                   <li>
+                      <a href="#" class="dropdown__link">
+                         <i class="ri-user-line"></i> Affiliate
+                      </a>                          
+                   </li>
+
+                   <li>
+                      <a href="" class="dropdown__link">
+                         <i class="ri-bank-line"></i></i> 
+                      </a>
+                   </li>
+
+                  
+                </ul> -->
+             </li>
+
+             <li><a href="./referAndEarn.html" class="nav__link"><i class="ri-bank-line"></i>Refer & Earn</a></li>
+          </ul>
+       </div>
+       
+       <div  class="user_info1" id="user-info">
+          <a href="#"><i class="ri-shopping-cart-2-line"></i></a>
+          <a href="#" onclick="togglePopup(event)"><i class="ri-user-3-line"></i></a>
+       </div>
+       <div class="popup" id="user-popup">
+          <span class="popup-close" onclick="togglePopup(event)">&times;</span>
+          <div class="popup-content">
+              <!-- User name and logout button -->
+              <p>User Name</p>
+              <button onclick="logout()">Logout</button>
+          </div>
+      </div>
+    </nav>
+ </header>
+    <section>
+        <div class="refHeading">
+            <h1>Refer & Earn</h1>
+        </div>
+        <div class="referContainer">
+            <div class="referimg">
+                <img src="./components/assets/img/refer.png" alt="Refer Image">
+            </div>
+           
+            <div class="containerR">
+                <div>
+                  <h1>Refer and Earn Program</h1>
+                  <p>Refer your friends and earn rewards!</p>
+                </div>
+                <div id="userInfo" class="user-info">
+                  <h3>Your Total Earning: </h3>
+                  <h3 id="referral_Points">0 <span>Points</span></h3>
+                </div>
+                <div class="referral-link">
+                  <input type="text" id="referralLink" readonly>
+                  <button onclick="copyReferralLink()">Copy Referral Link</button>
+                </div>
+                <p>Earn 200 Point for every successful referral.</p>
+              </div>
+        </div>
+    </section>
+    <div class="underref">
+        <div class="underlineR"><h1>How does it work?</h1></div>
+    </div>
+    <div class="RAE-middle">
+        
+    
+        <div class="RAE-middle-item-container">
+          <div class="RAE-middle-item">
+            <div class="image-container">
+              <i class="fas fa-users"></i>
+            </div>
+    
+            <div class="RAE-middle-text">
+              <div class="RAE-middle-text-bold">Invite your Friends</div>
+              <div class="RAE-middle-text-normal">
+                Share the link above REFERRAL LINK with your friends
+              </div>
+            </div>
+          </div>
+          <div class="RAE-middle-item">
+            <div class="image-container">
+              <i class="fas fa-gift"></i>
+            </div>
+    
+            <div class="RAE-middle-text">
+              <div class="RAE-middle-text-bold">
+                Friend Register via your link
+              </div>
+              <div class="RAE-middle-text-normal">
+                Using your REFERRAL CODE in the Register Form.
+              </div>
+            </div>
+          </div>
+          <div class="RAE-middle-item">
+            <div class="image-container">
+              <i class="fas fa-money-bill-alt"></i>
+            </div>
+    
+            <div class="RAE-middle-text">
+              <div class="RAE-middle-text-bold">
+                You get 200 Point as referral Gift
+              </div>
+              <div class="RAE-middle-text-normal">
+               If your Friend register Successfully than you earn 200 points. 
+            </div>
+          </div>
+        </div>
+        <div class="RAE-middle-item">
+          <div class="image-container">
+            <i class="fas fa-tags"></i>
+          </div>
+          <div class="RAE-middle-text">
+            <div class="RAE-middle-text-bold">
+              Your Friend gets 100 points
+            </div>
+            <div class="RAE-middle-text-normal">
+              As well as your friend also earn 100 points as a rewards.
+          </div>
+            </div>
+          </div>
+          <div class="RAE-middle-item">
+            <div class="image-container">
+              <i class="fas fa-wallet"></i>
+            </div>
+            <div class="RAE-middle-text">
+              <div class="RAE-middle-text-bold">
+                Now you can use these points to buy products.
+              </div>
+              <div class="RAE-middle-text-normal">
+                If you reach a certain amount of point than you can use these points.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <footer>
+        <div class="footercontainer">
+        <div class="footer-content">
+           <div class="footer-section footerabout">
+              <h3>Pure Ghee</h3>
+              <p class="tagline">"Discover the Purity of Desi Ghee, Crafted for Your Culinary Delight"</p>
+           </div>
+     
+           <div class="footer-section footerlinks">
+              <h2>Quick Links</h2>
+              <ul>
+              <li><a href="./home.html">Home</a></li>
+              <!-- <li><a href="#">Deal</a></li> -->
+              <li><a href="./allProducts.html">Products</a></li>
+              <li><a href="#">Contact</a></li>
+              </ul>
+           </div>
+     
+           <div class="footer-section fcontact">
+              <h2>Contact Us</h2>
+              <p class="footercontact">
+              Phone: +919782186238</p><br>
+              <p>Email: d1234567alchandsaini@gmail.com
+              </p>
+           </div>
+        </div>
+        </div>
+     
+        <div class="footer-bottom">
+        <p>&copy; 2023 @PureGhee. All Rights Reserved.</p>
+        </div>
+     </footer>
+
+  <!--=============== MAIN JS ===============-->
+  <script src="./components/assets/js/main.js"></script>
+  <script>
+     function togglePopup(event) {
+event.preventDefault();
+const popup = document.getElementById('user-popup');
+const username = localStorage.getItem('username');  // Get the username
+const popupContent = document.querySelector('.popup-content p');
+popupContent.textContent = `Welcome, ${username || 'User'}!`; // Display the username
+
+popup.style.display = (popup.style.display === 'block') ? 'none' : 'block';
+}
+
+function logout() {
+// Clear the stored username from localStorage
+localStorage.removeItem('username');
+
+// Redirect to the login page
+window.location.href = './register.html';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+const userPopup = document.getElementById('user-popup');
+
+// Check if the user is logged in (has a stored username)
+const storedUsername = localStorage.getItem('username');
+
+if (!storedUsername) {
+    // User is not logged in, redirect to the login page
+    window.location.href = './register.html';
+}
+
+// Display the stored username in the popup
+const userNameElement = document.querySelector('.popup-content p');
+if (userNameElement) {
+    userNameElement.textContent = storedUsername;
+}
+});
+
+function copyReferralLink() {
+    const referralLinkInput = document.getElementById('referralLink');
+    referralLinkInput.select();
+    document.execCommand('copy');
+    alert('Referral link copied to clipboard!');
+}
+
+  </script>
+   <script>
+async function displayUserProfile() {
+  const username = localStorage.getItem('username');
+  console.log('Retrieved username:', username);
+
+  try {
+    const response = await fetch(`https://pure-ghee-api.onrender.com/api/auth/user/details/${username}`);
+    const userData = await response.json();
+
+    console.log('User Data:', userData);
+
+    const referralPoints = document.getElementById('referral_Points');
+    referralPoints.innerText = `${userData.userInfo.referralPoints} Points`;
+
+    const referralLinkInput = document.getElementById('referralLink');
+console.log('Referral Link:', userData.userInfo.referralLink);
+referralLinkInput.value = userData.userInfo.referralLink || 'No referral link available';
+
+
+  } catch (error) {
+    console.error('Error fetching user data:', error);
+  }
+}
+
+// Call the function to display the user profile
+displayUserProfile();
+
+    </script>
+    </body>
+</html>

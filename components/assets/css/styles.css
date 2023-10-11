@@ -7,8 +7,8 @@
 
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
-  --black-color:  hsl(20, 25%, 12%);
-  --black-color-light: hsl(13, 24%, 15%);
+  --black-color:  hsl(132, 25%, 12%);
+  --black-color-light: hsl(123, 24%, 15%);
   --black-color-lighten: hsl(17, 20%, 18%);
   --white-color: #fff;
   --body-color: hsl(220, 100%, 97%);
@@ -100,7 +100,7 @@ a {
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 30px;
-  color: #f98a8a;
+  color: #8af98c;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 

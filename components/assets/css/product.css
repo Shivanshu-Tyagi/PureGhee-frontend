@@ -5,7 +5,7 @@
 }
 
 body{
-    background-color: #fae9e7;
+    background-color: #f5fdf4;
 }
 .product_bg{
     margin-top: 60px;
@@ -13,7 +13,7 @@ body{
     position: relative;
     /* background: url('/assets/img/productbg.png');
     background-position-y: center; */
- background-color: hsl(20, 25%, 12%);
+ background-color: hsl(132, 25%, 12%);
    height: 20vh;
    display: flex;
    justify-content: center;
@@ -77,21 +77,21 @@ body{
     padding: 60px;
     position: relative;
  
-    border-radius:0 36px 36px 0;
-	background-color: #e0c110;
-	background: radial-gradient(#f8e59ed5, #e0c601);
+    /* border-radius:0 36px 36px 0; */
+	/* background-color: #e0c110; */
+	/* background: radial-gradient(#fbf9f3d5, #ffffff); */
   }
 .allproduct .kande{
-    background-color: #282410;
-	background: radial-gradient(#282410b9, #282410);
+    /* background-color: #282410; */
+	/* background: radial-gradient(#282410b9, #282410); */
   }
   .allproduct .honey{
-    background-color: #781700;
-	background: radial-gradient(#781600a8, #4f0f01);
+    /* background-color: #781700; */
+	/* background: radial-gradient(#781600a8, #4f0f01); */
   }
   .allproduct .pipal{
-    background-color: #CF9972;
-	background: radial-gradient(#d3a17e8c, #ad7e5c);
+  /* background-color: #CF9972; */
+	/* background: radial-gradient(#d3a17e8c, #ad7e5c); */
   }
   
   .allproduct .card_left .fa {
@@ -102,7 +102,7 @@ body{
   }
   
   .allproduct .card_left .fa:hover {
-    color: #f37d3a;
+    color: #1b9721;
   }
   
   .allproduct .card_left .left {
@@ -169,12 +169,12 @@ body{
   .allproduct .card_right {
     flex: 1 1 50%;
     padding: 40px;
-    background: #f7f5f5;
+    background: #f5f7f5;
   }
   
   .allproduct .card_right span {
     text-transform: uppercase;
-    color: #f37d3a;
+    color: #20b82a;
     letter-spacing: 1.2px;
     font-size: .7rem;
   }
@@ -260,7 +260,7 @@ body{
     text-transform: uppercase;
     font-weight: 500;
     color: #fff;
-    background: #f37d3a;
+    background: #1fa822;
     font-size: .7rem;
     padding: 10px 30px;
     border-radius: 30px;
@@ -269,7 +269,7 @@ body{
   }
   
   .allproduct .card_right .card_footer .btn:hover {
-    color: #f37d3a;
+    color: #1fa822;
     background: #fff;
   }
   @media(max-width: 1032px) {

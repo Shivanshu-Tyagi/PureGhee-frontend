@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="./assets/css/styles.css">
+   <link rel="stylesheet" href="./assets/css/product.css">
+   <link rel="stylesheet" href="./assets/css/testimonial.css">
+   <link rel="stylesheet" href="./assets/css/stylehome.css">
+   <!--=============== REMIXICONS ===============-->
+   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+   <title>Products</title>
+</head>
+<body>
+   <style>
+      .popup {
+        width: 250px;
+        height: 150px;
+        display: none;
+        position: fixed;
+        background:hsl(127, 20%, 18%); 
+        top: 24%;
+        right: 0;
+        left: 90%;
+        transform: translate(-50%, -50%);
+       color: white;
+        padding: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .popup-close {
+        float: right;
+        cursor: pointer;
+    }
+    
+    .popup-content {
+        padding: 10px;
+    }
+    
+    .popup-content p {
+
+        margin-top: 10px;
+   text-align: center;
+    }
+    .popup-content button{
+     color: white;
+     margin-top: 40px;
+     margin-left: 50px;
+     border: none;
+     padding: 8px 15px;
+     text-transform: uppercase;
+     background-color: #0a9737;
+     letter-spacing: 1px;
+    }
+    
+    </style>
+   <style>
+      .quantity-selection {
+display: flex;
+flex-direction: row;
+/* margin-bottom: 20px; Adjust spacing as needed */
+justify-content: space-between;
+align-items: center;
+margin-top: 10px;
+}
+
+label {
+font-weight: bold;
+font-size: 14px;
+/* margin-bottom: 5px; */
+}
+
+select {
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+font-size: 14px;
+width: 60%; /* Full width */
+}
+
+/* Style the dropdown arrow */
+select {
+appearance: none;
+-webkit-appearance: none;
+-moz-appearance: none;
+background-image: url('https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css');
+background-size: 14px; /* Adjust the size of the arrow */
+background-position: right 10px center;
+background-repeat: no-repeat;
+}
+
+/* Style the dropdown arrow for Firefox */
+select::-ms-expand {
+display: none;
+}
+
+   </style>
+   <header class="header">
+    <nav class="nav container">
+       <div class="nav__data">
+          <a href="../index.html" class="nav__logo">
+            Pure Ghee
+          </a>
+          <div  class="user_info large" id="user-info"><a href="#"><i class="ri-shopping-cart-2-line"></i></a>
+             <a href="#" onclick="togglePopup(event)"><i class="ri-user-3-line"></i></a>
+          </div>
+          <div class="nav__toggle" id="nav-toggle">
+             <i class="ri-menu-line nav__burger"></i>
+             <i class="ri-close-line nav__close"></i>
+          </div>
+       </div>
+
+       <!--=============== NAV MENU ===============-->
+       <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+             <li><a href="../index.html" class="nav__link">Home</a></li>
+
+             <li><a href="./demoallproduct.html" class="nav__link">Products</a></li>
+
+           
+             <!--=============== DROPDOWN 2 ===============-->
+             <li class="dropdown__item">
+               <a href="./event.html" class="nav__link">
+                  Event
+               </a>
+             </li>
+
+             <li><a href="../referAndEarn.html" class="nav__link"><i class="ri-bank-line"></i>Refer & Earn</a></li>
+          </ul>
+       </div>
+       
+       <div  class="user_info1" id="user-info"><a href="#"><i class="ri-shopping-cart-2-line"></i></a>
+          <a href="#" onclick="togglePopup(event)"><i class="ri-user-3-line"></i></a>
+       </div>
+       <div class="popup" id="user-popup">
+          <span class="popup-close" onclick="togglePopup(event)">&times;</span>
+          <div class="popup-content">
+              <!-- User name and logout button -->
+              <p>User Name</p>
+             <a href="../register.html"> <button onclick="logout()">Log In</button></a>
+          </div>
+      </div>
+    </nav>
+ </header>
+   <section>
+      <div class="product_bg">
+         <h3>Our Products</h3>
+      </div>
+      <div class="product_content">
+      </div>
+   </section>
+   <section class="product_items">
+   <div class="allproduct pcard">
+      <div class="card_left">
+         <img src="./assets/img/ghee-png.png">
+      </div>
+      <div class="card_right">
+         <span>Ghee</span>
+         <h3>Cow's Pure Ghee</h3>
+         <p>A clarified butter from cow's milk, is prized for its high smoke point, rich fat-soluble vitamins, and potential anti-inflammatory properties. </p><br>
+         <p>You can also use in <span>puja</span> .</p>
+      <div class="quantity-selection">
+         <label for="quantity">Select Quantity:</label>
+         <select id="quantity" name="quantity">
+         <option value="100ml /  ₹ 180">100ml /  ₹ 180</option>
+         <option value="500ml /  ₹ 950">500ml /  ₹ 950</option>
+         <option value="1kg /  ₹ 1799">1kg /  ₹ 1799</option>
+         <!-- <option value="5kg /  ₹ 4260">5kg /  ₹ 4260</option> -->
+         </select>
+      </div>
+      
+         <div class="card_footer">
+           
+            <a href="#" class="btn buy-now" onclick="passProductDetails('Cow\'s Pure Ghee', './assets/img/ghee-png.png', 'quantity')">Buy Now</a>
+         </div>
+      </div>
+   </div>
+   <div class="allproduct pcard">
+      <div class="card_left">
+         <img src="./assets/img/ghee-png.png">
+      </div>
+      <div class="card_right">
+         <span>Ghee</span>
+         <h3>Buffalow's Pure Ghee</h3>
+         <p>It is derived from buffalo milk, is known for its creamy texture, slightly different flavor profile compared to cow ghee, and potential nutritional value,  </p><br>
+         <div class="quantity-selection">
+            <label for="quantity">Select Quantity:</label>
+            <select id="bufalowquantity" name="quantity">
+            <option value="500ml /  ₹ 750">500ml /  ₹ 750</option>
+            <option value="1kg /  ₹ 1399">1kg /  ₹ 1399</option>
+            <!-- <option value="2kg /  ₹ 1560">2kg /  ₹ 1560</option>
+            <option value="5kg /  ₹ 4560">5kg /  ₹ 4560</option> -->
+            </select>
+         </div>
+         <div class="card_footer">
+           
+            <a href="#" class="btn buy-now" onclick="passProductDetails('Buffalow\'s Pure Ghee', './assets/img/ghee-png.png')">Buy Now</a>
+         </div>
+      </div>
+   </div>
+   <div class="allproduct pcard">
+      <div class="card_left kande">
+         <img src="./assets/img/kande-img-removebg-preview.png">
+      </div>
+      <div class="card_right ">
+         <span>Dung-Cake</span>
+         <h3>Cow's Dung-Cake ORGANIC for puja</h3>
+         <p>Dung cake is a traditional fuel source made from dried cow or buffalo dung, commonly used for cooking and Puja. </p>
+         <div class="quantity-selection">
+            <label for="quantity">Select Quantity:</label>
+            <select id="cowDungquantity" name="quantity">
+            <option value="5 Pis. /  ₹ 30">5 Pis. /  ₹ 30</option>
+            <option value="10 Pis. /  ₹ 50">10 Pis. /  ₹ 50</option>
+            <option value="20 Pis. /  ₹ 100">20 Pis. /  ₹ 100</option>
+            <option value="50 Pis. /  ₹ 200">50 Pis. /  ₹ 200</option>
+            </select>
+         </div>
+         <div class="card_footer">
+           
+            <a href="#" class="btn buy-now" onclick="passProductDetails('Cow\'s Dung-Cake', './assets/img/kande-img-removebg-preview.png')">
+               buy now
+            </a>
+         </div>
+      </div>
+   </div>
+   <div class="allproduct pcard">
+      <div class="card_left kande">
+         <img src="./assets/img/kande-img-removebg-preview.png">
+      </div>
+      <div class="card_right ">
+         <span>Dung-Cake</span>
+         <h3>Buffalow's Dung-Cake ORGANIC for Cooking</h3>
+         <p>Dung cake is a traditional fuel source made from dried cow or buffalo dung, commonly used for cooking and Puja. </p>
+         <div class="quantity-selection">
+            <label for="quantity">Select Quantity:</label>
+            <select id="buffalowDungquantity" name="quantity">
+               <option value="5 Pis. /  ₹ 30">5 Pis. /  ₹ 30</option>
+            <option value="10 Pis. /  ₹ 50">10 Pis. /  ₹ 50</option>
+            <option value="20 Pis. /  ₹ 100">20 Pis. /  ₹ 100</option>
+            <option value="50 Pis. /  ₹ 200">50 Pis. /  ₹ 200</option>
+            </select>
+         </div>
+         <div class="card_footer">
+           
+            <a href="#" class="btn buy-now" onclick="passProductDetails('Buffalow\'s Dung-Cake', './assets/img/kande-img-removebg-preview.png')">
+               buy now
+            </a>
+         </div>
+      </div>
+   </div>
+   <div class="allproduct pcard">
+      <div class="card_left honey">
+         <img src="./assets/img/honry-img-removebg-preview.png">
+      </div>
+      <div class="card_right ">
+         <span>Honey</span>
+         <h3>Pure Bee's Honey</h3>
+         <p>Experience the natural sweetness and health benefits of our pure Honey, carefully collected from the heart of blooming meadows. </p>
+         <div class="quantity-selection">
+            <label for="quantity">Select Quantity:</label>
+            <select id="honeyquantity" name="quantity">
+            <!-- <option value="150g /  ₹ 230">150gm /  ₹ 230</option>
+            <option value="250g /  ₹ 560">250gm /  ₹ 560</option> -->
+            <option value="500ml /  ₹ 399">500ml /  ₹ 399</option>
+            <option value="1kg /  ₹ 779">1kg /  ₹ 779</option>
+            </select>
+         </div>
+         <div class="card_footer">
+           
+            <a href="#" class="btn buy-now" onclick="passProductDetails('Honey', './assets/img/honry-img-removebg-preview.png')">
+               buy now
+            </a>
+         </div>
+      </div>
+   </div>
+   <div class="allproduct pcard">
+      <div class="card_left pipal">
+         <img src="./assets/img/pipal-removebg-preview.png">
+      </div>
+      <div class="card_right ">
+         <span>Pipple's twig</span>
+         <h3>pippal ki lakdi</h3>
+         <p>Enhance your spiritual connection during puja with our sacred Pipal's Twig, symbolizing purity and auspiciousness for divine rituals </p>
+         <div class="quantity-selection">
+            <label for="quantity">Select Quantity:</label>
+            <select id="pipplequantity" name="quantity">
+               <!-- <option value="150g /  ₹ 50">150gm /  ₹ 50</option>
+               <option value="250g /  ₹ 120">250gm /  ₹ 120</option> -->
+               <option value="500g /  ₹ 279">500gm /  ₹ 279</option>
+               <option value="1kg /  ₹ 499">1kg /  ₹ 499</option>
+            </select>
+         </div>
+         <div class="card_footer">
+           
+            <a href="#" class="btn buy-now" onclick="passProductDetails('Pipple ki lakdi', './assets/img/pipal-removebg-preview.png')">
+               buy now
+            </a>
+         </div>
+      </div>
+   </div>
+   </section>
+   <section id="our-mission" class="mission-section">
+      <div class="testimonial">
+         <div class="shadow"></div>
+         <span class="top border"></span>
+         <h1>Our Mission</h1>
+         <p>We are dedicated to producing the finest quality pure ghee while preserving the traditional methods. Our mission is to provide our customers with premium, authentic ghee that enhances the flavors of their meals and promotes a healthy lifestyle.</p>
+         <p class="source">&mdash;Pure Ghee</p>
+         <span class="bottom border"></span>
+      </div>
+   </section>
+   <footer>
+      <div class="footercontainer">
+      <div class="footer-content">
+         <div class="footer-section footerabout">
+            <h3>Pure Ghee</h3>
+            <p class="tagline">"Discover the Purity of Desi Ghee, Crafted for Your Culinary Delight"</p>
+         </div>
+   
+         <div class="footer-section footerlinks">
+            <h2>Quick Links</h2>
+            <ul>
+            <li><a href="../index.html">Home</a></li>
+            <!-- <li><a href="#">Deal</a></li> -->
+            <li><a href="./demoallproduct.html">Products</a></li>
+            <li><a href="#">Contact</a></li>
+            </ul>
+         </div>
+   
+         <div class="footer-section fcontact">
+            <h2>Contact Us</h2>
+            <p class="footercontact">
+            Phone: +919782186238</p><br>
+            <p>Email: d1234567alchandsaini@gmail.com
+            </p>
+         </div>
+      </div>
+      </div>
+   
+      <div class="footer-bottom">
+      <p>&copy; 2023 @PureGhee. All Rights Reserved.</p>
+      </div>
+   </footer>
+      <!--=============== MAIN JS ===============-->
+      <script src="./assets/js/main.js"></script>
+   <!-- <script>
+         function passProductDetails(productName, productImage) {
+         const quantity = document.getElementById('quantity').value;
+      
+         const productDetails = {
+            productName,
+            quantity,
+            productImage
+         };
+      
+         // Store product details in localStorage
+         localStorage.setItem('productDetails', JSON.stringify(productDetails));
+      
+         // Redirect to the order page
+         window.location.href = 'order.html';
+      }
+      function passProductDetails(productName, productImage) {
+         const quantity = document.getElementById('bufalowquantity').value;
+      
+         const productDetails = {
+            productName,
+            quantity,
+            productImage
+         };
+      
+         // Store product details in localStorage
+         localStorage.setItem('productDetails', JSON.stringify(productDetails));
+      
+         // Redirect to the order page
+         window.location.href = 'order.html';
+      }
+      function passProductDetails(productName, productImage) {
+         const quantity = document.getElementById('cowDungquantity').value;
+      
+         const productDetails = {
+            productName,
+            quantity,
+            productImage
+         };
+      
+         // Store product details in localStorage
+         localStorage.setItem('productDetails', JSON.stringify(productDetails));
+      
+         // Redirect to the order page
+         window.location.href = 'order.html';
+      }
+      function passProductDetails(productName, productImage) {
+         const quantity = document.getElementById('buffalowDungquantity').value;
+      
+         const productDetails = {
+            productName,
+            quantity,
+            productImage
+         };
+      
+         // Store product details in localStorage
+         localStorage.setItem('productDetails', JSON.stringify(productDetails));
+      
+         // Redirect to the order page
+         window.location.href = 'order.html';
+      }
+      function passProductDetails(productName, productImage) {
+         const quantity = document.getElementById('honeyquantity').value;
+      
+         const productDetails = {
+            productName,
+            quantity,
+            productImage
+         };
+      
+         // Store product details in localStorage
+         localStorage.setItem('productDetails', JSON.stringify(productDetails));
+      
+         // Redirect to the order page
+         window.location.href = 'order.html';
+      }
+      function passProductDetails(productName, productImage) {
+         const quantity = document.getElementById('pipplequantity').value;
+      
+         const productDetails = {
+            productName,
+            quantity,
+            productImage
+         };
+      
+         // Store product details in localStorage
+         localStorage.setItem('productDetails', JSON.stringify(productDetails));
+      
+         // Redirect to the order page
+         window.location.href = 'order.html';
+      }
+   </script>
+      -->
+      
+      <!-- <script>
+         function passProductDetails(productName, productImage) {
+            let quantityElementId;
+   
+            // Determine the quantity element based on the product name
+            switch (productName) {
+               case "Cow's Pure Ghee":
+                     quantityElementId = 'quantity';
+                     break;
+               case "Buffalow's Pure Ghee":
+                     quantityElementId = 'bufalowquantity';
+                     break;
+               case "Cow's Dung-Cake":
+                     quantityElementId = 'cowDungquantity';
+                     break;
+               case "Buffalow's Dung-Cake":
+                     quantityElementId = 'buffalowDungquantity';
+                     break;
+               case "Honey":
+                     quantityElementId = 'honeyquantity';
+                     break;
+               case "Pipple ki lakdi":
+                     quantityElementId = 'pipplequantity';
+                     break;
+               // Add more cases for other products if needed
+               default:
+                     console.error('Unknown product:', productName);
+                     return;
+            }
+   
+            const quantity = document.getElementById(quantityElementId).value;
+   
+            const productDetails = {
+               productName,
+               quantity,
+               productImage
+            };
+   
+            localStorage.setItem('productDetails', JSON.stringify(productDetails));
+            window.location.href = 'order.html';
+         }
+   </script> -->
+   <script>
+      function togglePopup(event) {
+ event.preventDefault();
+ const popup = document.getElementById('user-popup');
+ const username = localStorage.getItem('username');  // Get the username
+ const popupContent = document.querySelector('.popup-content p');
+ popupContent.textContent = `Welcome, ${username || 'User'}!`; // Display the username
+
+ popup.style.display = (popup.style.display === 'block') ? 'none' : 'block';
+}
+
+
+
+
+   </script>
+  
+  <script>
+ 
+ 
+   // Function to handle buying a product
+   function passProductDetails(productName, productImage, quantityElementId) {
+    
+       alert('You need to be logged in to buy products.');
+       // Redirect to the login page
+       window.location.href = '../register.html'; // Replace with your login page URL
+     }
+   
+ </script>
+ 
+  
+</body>
+</html>

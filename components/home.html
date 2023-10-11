@@ -20,7 +20,7 @@
          height: 150px;
          display: none;
          position: fixed;
-         background:hsl(17, 20%, 18%); 
+         background:hsl(127, 20%, 18%); 
          top: 24%;
          right: 0;
          left: 90%;
@@ -51,7 +51,7 @@
       border: none;
       padding: 8px 15px;
       text-transform: uppercase;
-      background-color: #970C0A;
+      background-color: #0a9737;
       letter-spacing: 1px;
      }
      
@@ -79,63 +79,14 @@
 
                   <li><a href="./allProducts.html" class="nav__link">Products</a></li>
 
-                  <!--=============== DROPDOWN 1 ===============-->
-                  <!-- <li class="dropdown__item">
-                     <div class="nav__link">
-                        Shop by Category <i class="ri-arrow-down-s-line dropdown__arrow"></i>
-                     </div>
-
-                     <ul class="dropdown__menu">
-                        <li>
-                           <a href="#" class="dropdown__link">
-                              <i class="ri-verified-badge-line"></i></i> Cow Pure Ghee
-                           </a>                          
-                        </li>
-
-                        <li>
-                           <a href="#" class="dropdown__link">
-                              <i class="ri-verified-badge-fill"></i> Buffalow Pure Ghee
-                           </a>
-                        </li> -->
-
-                        <!--=============== DROPDOWN SUBMENU ===============-->
-                        <!-- <li class="dropdown__subitem">
-                           <div class="dropdown__link">
-                              <i class="ri-bar-chart-line"></i> Reports <i class="ri-add-line dropdown__add"></i>
-                           </div>
-
-                           <ul class="dropdown__submenu">
-                              <li>
-                                 <a href="#" class="dropdown__sublink">
-                                    <i class="ri-file-list-line"></i> 
-                                 </a>
-                              </li>
-      
-                              <li>
-                                 <a href="#" class="dropdown__sublink">
-                                    <i class="ri-cash-line"></i> Payments
-                                 </a>
-                              </li>
-      
-                              <li>
-                                 <a href="#" class="dropdown__sublink">
-                                    <i class="ri-refund-2-line"></i> Refunds
-                                 </a>
-                              </li>
-                           </ul>
-                        </li> -->
-                     <!-- </ul>
-                  </li> -->
-                  
-                  <!-- <li><a href="#" class="nav__link">Blogs</a></li> -->
-
+                
                   <!--=============== DROPDOWN 2 ===============-->
                   <li class="dropdown__item">
-                     <div class="nav__link">
-                        Earn <i class="ri-arrow-down-s-line dropdown__arrow"></i>
-                     </div>
+                     <a href="./event.html" class="nav__link">
+                        Event
+                     </a>
 
-                     <ul class="dropdown__menu">
+                     <!-- <ul class="dropdown__menu">
                         <li>
                            <a href="#" class="dropdown__link">
                               <i class="ri-user-line"></i> Affiliate
@@ -143,20 +94,21 @@
                         </li>
 
                         <li>
-                           <a href="#" class="dropdown__link">
-                              <i class="ri-bank-line"></i></i> Refer & Earn
+                           <a href="" class="dropdown__link">
+                              <i class="ri-bank-line"></i></i> 
                            </a>
                         </li>
 
                        
-                     </ul>
+                     </ul> -->
                   </li>
 
-                  <li><a href="#" class="nav__link">Wallet</a></li>
+                  <li><a href="../referAndEarn.html" class="nav__link"><i class="ri-bank-line"></i>Refer & Earn</a></li>
                </ul>
             </div>
             
-            <div  class="user_info1" id="user-info"><a href="#"><i class="ri-shopping-cart-2-line"></i></a>
+            <div  class="user_info1" id="user-info">
+               <a href="#"><i class="ri-shopping-cart-2-line"></i></a>
                <a href="#" onclick="togglePopup(event)"><i class="ri-user-3-line"></i></a>
             </div>
             <div class="popup" id="user-popup">
@@ -178,7 +130,7 @@
                
                <h1>Pure Ghee - Homemade</h1>
                <p>At our Ghee store, Our homemade pure ghee is made with the utmost care and attention to ensure its great taste and affordable price.</p>
-               <button>Explore</button>
+               <a href="./allProducts.html"><button>Shop Now</button></a>
             </div>
          </div>
       </section>
@@ -396,7 +348,7 @@ function logout() {
     localStorage.removeItem('username');
 
     // Redirect to the login page
-    window.location.href = './SignIn-SignUp-Form-main/index.html';
+    window.location.href = '../register.html';
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -407,7 +359,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (!storedUsername) {
         // User is not logged in, redirect to the login page
-        window.location.href = './SignIn-SignUp-Form-main/index.html';
+        window.location.href = '../register.html';
     }
     
     // Display the stored username in the popup

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+</head>
+<body>
+  <h1>User Profile</h1>
+  <div id="userInfo"></div>
+  <script>
+  async function displayUserProfile() {
+  const username = localStorage.getItem('username');
+  console.log('Retrieved username:', username);
+
+  try {
+    const response = await fetch(`https://pure-ghee-api.onrender.com/api/auth/user/details/${username}`);
+    const userData = await response.json();
+   
+    // Update the display of user details
+    const userInfoDiv = document.getElementById('userInfo');
+        userInfoDiv.innerHTML = `
+          <p>Name: ${userData.userInfo.name}</p>
+          <p>Username: ${userData.userInfo.username}</p>
+          <p>Email: ${userData.userInfo.email}</p>
+          <p>Referral Code: ${userData.userInfo.referralCode}</p>
+          <p>Referral Points: ${userData.userInfo.referralPoints}</p>
+          <p>Referral Link: <a href="${userData.userInfo.referralLink}">${userData.userInfo.referralLink}</a></p>
+        `;
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+
+// Call the function to display user info
+displayUserProfile();
+  </script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 body{
-background-color: #fce5e2;
+background-color: #f5fdf4;
 }
 .headimage {
     background-image: url('../img/cow.jpg');
@@ -56,20 +56,20 @@ background-color: #fce5e2;
    font-weight: bolder;
 }
 span{
-    color: #ff6600;
+    color: #44BB53;
 }
 .head_content button {
     margin-top: 20px;
     padding: 10px 20px;
     font-size: 18px;
     border: none;
-    background-color: #ff6600; /* Adjusted button color */
+    background-color: #44BB53; /* Adjusted button color */
     color: white;
     cursor: pointer;
 }
 
 .head_content button:hover {
-    background-color: #e05500; /* Adjusted button hover color */
+    background-color: #44BB53; /* Adjusted button hover color */
 }
 @media screen and (max-width: 768px) {
     .head_content {
@@ -110,7 +110,7 @@ span{
   position: relative;
   width: 100%;
   height: 3px;
-  background-color: #970C0A;
+  background-color: #167F38;
 } */
 .about_content{
     display: flex;
@@ -153,7 +153,7 @@ span{
     bottom: 3px;
     left: 50%;
     margin-left: -14px;
-    background-color: #b80000;
+    background-color: #167F38;
   }
   .underline h1:after {
     width: 140px;
@@ -164,7 +164,7 @@ span{
     margin-top: 15px;
     left: 50%;
     margin-left: -70px;
-    background-color: #b80000;
+    background-color: #167F38;
   }
   .about_content button{
     position: relative;
@@ -198,8 +198,8 @@ span{
     display: block;
     width: 30px;
     margin-top: 8px;
-    border-bottom: 2px solid #b80000;
-    background-color:#131111;
+    border-bottom: 2px solid #167F38;
+    background-color:#111311;
   }
   /* =================Why Choose Us====================== */
   .chooseus_section{
@@ -241,7 +241,7 @@ span{
     bottom: 3px;
     left: 50%;
     margin-left: -14px;
-    background-color: #b80000;
+    background-color: #167F38;
   }
   .underline1 h1:after {
     width: 140px;
@@ -252,7 +252,7 @@ span{
     margin-top: 15px;
     left: 50%;
     margin-left: -70px;
-    background-color: #b80000;
+    background-color: #167F38;
   }
   .chooseus_bottomhead{
 
@@ -268,13 +268,13 @@ span{
     padding: 10px;
   }
   .chooseus_content h3{
-    color: #b80000;
+    color: #167F38;
   }
  .divider{
   margin-top: 5px;
     width: 100%;
     height: 1px;
-    background-color: #b80000;
+    background-color: #167F38;
  }
 
  /* ===========================All Product=========================== */
@@ -315,7 +315,7 @@ span{
     bottom: 3px;
     left: 50%;
     margin-left: -14px;
-    background-color: #b80000;
+    background-color: #167F38;
   }
   .underline2 h1:after {
     width: 140px;
@@ -326,7 +326,7 @@ span{
     margin-top: 15px;
     left: 50%;
     margin-left: -70px;
-    background-color: #b80000;
+    background-color: #167F38;
   }
   
   #header{
@@ -372,7 +372,7 @@ span{
     margin-bottom:-50px;
     height:300px;
     width:300px;
-    background-color:#1D1C20;
+    background-color:#111311;
     color:#fff;
     padding:20px;
   }
@@ -390,7 +390,7 @@ span{
   .card-price{
     width:100px;
     height:100px;
-    background-color:#970C0A;
+    background-color:#167F38;
     color:#fff;
     margin-left:auto;
     font-size:2rem;
@@ -409,7 +409,7 @@ span{
   justify-content: center;
 }
 .deal_section{
-background-color: #1D1C20;
+background-color: #111311;
 width: 100%;
 height: 45vh;
 display: grid;
@@ -451,7 +451,7 @@ font-weight: bold;
 }
 
 .deal_lest_content button:hover {
-  background-color: #e05500; /* Adjusted button hover color */
+  background-color: #44BB53; /* Adjusted button hover color */
 }
 
 .button-50 {
@@ -523,7 +523,7 @@ font-weight: bold;
 .divider_horizontal{
   height: 20px;
   width: 2px;
-  background-color:#970C0A;
+  background-color:#167F38;
 }
 .shippingprod{
   display: flex;
@@ -536,12 +536,12 @@ font-weight: bold;
 }
 .shippingprod i{
   font-size: 26px;
-  color: #b80000;
+  color: #167F38;
 }
 .bottom_divider{
   width: 100%;
   height: 2px;
-  background-color: #970C0A;
+  background-color: #167F38;
   /* margin-top: 30px; */
 }
 
@@ -552,7 +552,7 @@ font-weight: bold;
 /* Footer Styles */
 /* Footer Styles */
 footer {
-  background-color: hsl(20, 25%, 12%);
+  background-color: hsl(120, 25%, 12%);
   color: #fff;
   padding: 40px 0;
 }
@@ -584,7 +584,7 @@ footer {
   letter-spacing: 2px;
   font-size: 30px;
   margin-bottom: 20px;
-  color: #f98a8a;
+  color: #8af9a2;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .tagline{
@@ -639,9 +639,6 @@ footer {
   align-items: start;
   justify-content: center;
 }
-.fcontact h2{
-  
-}
 
 @media (min-width: 768px) {
   .button-50 {
@@ -673,7 +670,7 @@ footer {
 }
 .about_img img{
   padding: 10px;
-  border: 2px double #970C0A;
+  border: 2px double #167F38;
 }
 .about_img::before{
   content: 'About';
@@ -685,8 +682,8 @@ footer {
   align-items: center;
   font-size: 30px;
   font-weight: bold;
-  border-top: 2px solid #970C0A;
-  border-bottom: 2px solid #970C0A;
+  border-top: 2px solid #167F38;
+  border-bottom: 2px solid #167F38;
 
 }
 .about_img::after{
@@ -699,8 +696,8 @@ footer {
   align-items: center;
   font-size: 30px;
   font-weight: bold;
-  border-top: 2px solid #970C0A;
-  border-bottom: 2px solid #970C0A;
+  border-top: 2px solid #167F38;
+  border-bottom: 2px solid #167F38;
 
 }
 .underline{
@@ -929,7 +926,7 @@ font-weight: bold;
 }
 .about_img img{
   padding: 10px;
-  border: 2px double #970C0A;
+  border: 2px double #167F38;
 }
 .about_img::before{
   content: 'About';
@@ -941,8 +938,8 @@ font-weight: bold;
   align-items: center;
   font-size: 25px;
   font-weight: bold;
-  border-top: 2px solid #970C0A;
-  border-bottom: 2px solid #970C0A;
+  border-top: 2px solid #167F38;
+  border-bottom: 2px solid #167F38;
 
 }
 .about_img::after{
@@ -955,8 +952,8 @@ font-weight: bold;
   align-items: center;
   font-size: 25px;
   font-weight: bold;
-  border-top: 2px solid #970C0A;
-  border-bottom: 2px solid #970C0A;
+  border-top: 2px solid #167F38;
+  border-bottom: 2px solid #167F38;
 
 }
 .underline{
@@ -1027,7 +1024,7 @@ font-weight: bold;
    
   }
   .deal_section{
-  background-color: #1D1C20;
+  background-color: #111311;
   width: 100%;
   height: 35vh;
   display: grid;
@@ -1120,7 +1117,7 @@ font-weight: bold;
      
     }
     .deal_section{
-    background-color: #1D1C20;
+    background-color: #111311;
     width: 100%;
     height: 35vh;
     display: grid;

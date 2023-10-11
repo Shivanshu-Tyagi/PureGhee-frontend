@@ -1,159 +1,332 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SignIn&SignUp</title>
-    <link rel="stylesheet" type="text/css" href="./style.css" />
-    <script
-      src="https://kit.fontawesome.com/64d58efce2.js"
-      crossorigin="anonymous"
-    ></script>
-  
-  </head>
-  <body>
-    <div class="container">
-      <div class="forms-container">
-        <div class="signin-signup">
-          <form action="#" class="sign-in-form" id="login-form">
-            <h2 class="title">Sign In</h2>
-            <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input type="text" id="login-username" placeholder="Username" />
-            </div>
-            <div class="input-field">
-              <i class="fas fa-lock"></i>
-              <input type="password" id="login-password" placeholder="Password" />
-            </div>
-            <input type="submit" value="Login" class="btn solid" />
-          </form>
+   <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+      <!--=============== REMIXICONS ===============-->
+      <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
 
+      <!--=============== CSS ===============-->
+      <link rel="stylesheet" href="assets/css/styles.css">
+      <link rel="stylesheet" href="assets/css/stylehome.css">
+      <link rel="stylesheet" href="assets/css/testimonial.css">
+      <title>Responsive dropdown menu - Bedimcode</title>
+   </head>
+   <body>
+     <style>
+       .popup {
+         width: 250px;
+         height: 150px;
+         display: none;
+         position: fixed;
+         background:hsl(127, 20%, 18%); 
+         top: 24%;
+         right: 0;
+         left: 90%;
+         transform: translate(-50%, -50%);
+        color: white;
+         padding: 20px;
+         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+     }
+     
+     .popup-close {
+         float: right;
+         cursor: pointer;
+     }
+     
+     .popup-content {
+         padding: 10px;
+     }
+     
+     .popup-content p {
 
-          <form action="#" class="sign-up-form" id="signup-form">
-            <h2 class="title">Sign Up</h2>
-            <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input type="text" id="signup-username" placeholder="Username" />
+         margin-top: 10px;
+    text-align: center;
+     }
+     .popup-content button{
+      color: white;
+      margin-top: 40px;
+      margin-left: 50px;
+      border: none;
+      padding: 8px 15px;
+      text-transform: uppercase;
+      background-color: #0a9737;
+      letter-spacing: 1px;
+     }
+     
+     </style>
+      <!--=============== HEADER ===============-->
+      <header class="header">
+         <nav class="nav container">
+            <div class="nav__data">
+               <a href="#" class="nav__logo">
+                 Pure Ghee
+               </a>
+               <div  class="user_info large" id="user-info"><a href="#"><i class="ri-shopping-cart-2-line"></i></a>
+                  <a href="#" onclick="togglePopup(event)"><i class="ri-user-3-line"></i></a>
+               </div>
+               <div class="nav__toggle" id="nav-toggle">
+                  <i class="ri-menu-line nav__burger"></i>
+                  <i class="ri-close-line nav__close"></i>
+               </div>
             </div>
-            <div class="input-field">
-              <i class="fas fa-envelope"></i>
-              <input type="email" id="signup-email" placeholder="Email" />
+
+            <!--=============== NAV MENU ===============-->
+            <div class="nav__menu" id="nav-menu">
+               <ul class="nav__list">
+                  <li><a href="./demohome.html" class="nav__link">Home</a></li>
+
+                  <li><a href="./components/demoallproduct.html" class="nav__link">Products</a></li>
+
+                
+                  <!--=============== DROPDOWN 2 ===============-->
+                  <li class="dropdown__item">
+                     <a href="./event.html" class="nav__link">
+                        Event
+                     </a>
+                   </li>
+
+                  <li><a href="../referAndEarn.html" class="nav__link"><i class="ri-bank-line"></i>Refer & Earn</a></li>
+               </ul>
             </div>
-            <div class="input-field">
-              <i class="fas fa-lock"></i>
-              <input type="password" id="signup-password" placeholder="Password" />
+            
+            <div  class="user_info1" id="user-info"><a href="#"><i class="ri-shopping-cart-2-line"></i></a>
+               <a href="#" onclick="togglePopup(event)"><i class="ri-user-3-line"></i></a>
             </div>
-            <input type="submit" value="Sign Up" class="btn solid" />
-          </form>
-        </div>
+            <div class="popup" id="user-popup">
+               <span class="popup-close" onclick="togglePopup(event)">&times;</span>
+               <div class="popup-content">
+                   <!-- User name and logout button -->
+                   <p>User Name</p>
+                  <a href="./register.html"> <button onclick="logout()">Log In</button></a>
+               </div>
+           </div>
+         </nav>
+      </header>
+      <section class="img_overlay_section">
+         <div class="headimage">
+           
+         </div>
+         <div class="headimage_content">
+            <div class="head_content">
+               
+               <h1>Pure Ghee - Homemade</h1>
+               <p>At our Ghee store, Our homemade pure ghee is made with the utmost care and attention to ensure its great taste and affordable price.</p>
+               <a href="./register.html"><button>Shop Now</button></a>
+            </div>
+         </div>
+      </section>
+      <section class="about_section">
+<div class="about_section_content">
+   <div class="about_img">
+      <div class="vertical_line"></div>
+      <div class="vertical_line"></div>
+      <img src="./assets/img/ghee.jpg" alt="" srcset="">
+   </div>
+   <div class="about_content">
+      <div class="underline"><h1>
+         ABOUT US
+      </h1></div>
+      <h2>Welcome to Pure Ghee, your one-stop-shop for fresh, high-quality nuts and homemade butter.</h2>
+      <p>At Pure Ghee, we’re passionate about delivering the best quality products at affordable prices.while our homemade Ghee is made with love and care for that authentic taste. We take pride in our products, and we know you’ll love them too.</p>
+      <div class="about_button">
+         <button>READ MORE</button>
       </div>
-      <div class="panels-container">
-
-        <div class="panel left-panel">
-            <div class="content">
-                <h3>New here?</h3>
-                <p style="font-size: 20px;">Join Pure Ghee Family - Create Your Account</p>
-                <button class="btn transparent" id="sign-up-btn">Sign Up</button>
+      
+   </div>
+</div>
+      </section>
+      <section class="about_section whyus">
+         <div class="chooseus_section">
+            <div class="chooseus_tophead">
+               <div class="underline1"><h1>
+                  Why Choose Us
+               </h1></div>
+               <p>We’re not just a Ghee store. We’re a family-owned business that cares about our customers and the quality of our products. Here are some reasons to choose Pure Ghee:</p>
             </div>
-            <img src="./img/logi.svg" class="image" alt="">
-        </div>
-
-        <div class="panel right-panel">
-            <div class="content">
-                <h3>One of us?</h3>
-                <p style="font-size: 20px;">Welcome Back! Login to Your Pure Ghee Account'</p>
-                <button class="btn transparent" id="sign-in-btn">Sign In</button>
+            <div class="chooseus_bottomhead">
+               <div class="chooseus_content">
+                  <h3>01</h3>
+                  <h2>Freshness Guarantee</h2>
+                  <p>Our nuts are sourced from the best suppliers and are always fresh, ensuring the perfect taste with every bite.</p>
+                  <div class="divider"></div>
+               </div>
+               <div class="chooseus_content">
+                  <h3>02</h3>
+                  <h2>Affordability</h2>
+                  <p>At Pure Ghee, we believe that high-quality, fresh products shouldn ’t come at a premium price. That ’s why we offer affordable prices for all our products.</p>
+                  <div class="divider"></div>
+               </div>
+               <div class="chooseus_content">
+                  <h3>03</h3>
+                  <h2>Homemade Butter</h2>
+                  <p>Our homemade butter is made with love and care, ensuring an authentic taste that you won ’t find anywhere else.</p>
+                   <div class="divider"></div>
+               </div>
+               <div class="chooseus_content">
+                  <h3>04</h3>
+                  <h2>Variety</h2>
+                  <p>OVarietyWe offer a wide selection of nuts and butter to choose from, so you can find your perfect match.</p>
+                   <div class="divider"></div>
+               </div>
             </div>
-            <img src="./img/regis.svg" class="image" alt="">
+         </div>
+      </section>
+<section class="all_products">
+  <div class="all_prodect_container">
+   <div class="underline2"><h1>
+      Our Products
+   </h1></div>
+      <div class="allproduct_container">
+      <div class="card">
+        <div class="card-image">
+          <img src="./assets/img/gheee_box.png">
         </div>
+        <div class="card-text">
+          <p class="card-meal-type">cow <span>/</span> Buffalow</p>
+          <h2 class="card-title">Pure Ghee</h2>
+          <p class="card-body">Pure ghee is a rich, nutty-tasting clarified butter, perfect for cooking and frying due to its high smoke point.</p>
+        </div>
+          <a href="./register.html"> <div class="card-price">Buy</div></a>
       </div>
+        <div class="card">
+        <div class="card-image">
+          <img src="./assets/img/dungcake.png">
+        </div>
+        <div class="card-text">
+          <p class="card-meal-type">cow <span>/</span> Buffalow</p>
+          <h2 class="card-title">DungCake</h2>
+          <p class="card-body">Dung cake is a traditional fuel source made from dried cow or buffalo dung, commonly used for cooking and Puja.</p>
+        </div>
+          <a href="./register.html"> <div class="card-price">Buy</div></a>
+      </div>
+        <div class="card">
+        <div class="card-image">
+          <img src="./assets/img/honey.png">
+        </div>
+        <div class="card-text">
+          <p class="card-meal-type">Bee <span>'</span> s</p>
+          <h2 class="card-title">Pure Honey</h2>
+          <p class="card-body">Honey is nature's sweet nectar, offering a delicious, natural sweetness with potential health benefits.</p>
+        </div>
+          <a href="./register.html"> <div class="card-price">Buy</div></a>
+      </div>
+        <div class="card">
+        <div class="card-image">
+          <img src="./assets/img/pipple_wood.png">
+        </div>
+        <div class="card-text">
+          <p class="card-meal-type">Pipple/Wood</p>
+          <h2 class="card-title">Pipple's twig</h2>
+          <p class="card-body">The pipal twig (pippal ki lakdi) is believed to have purifying and sanctifying properties.Or individuals during religious ceremonies,and blessings.</p> 
+        </div>
+       <a href="./register.html">   <a href="./register.html"> <div class="card-price">Buy</div></a></a>
+      </div>
+      
+      </div>
+  </div>
+</section>
+<section class="deal_container">
+   <div class="deal_section">
+      <div class="deal_lest_content">
+         <h3>Deal of the week</h3>
+         <h1>Golden Savings: Ghee at Up to 20% Off </h1>
+         <button type="submit" class="button-50">Shop Now</button>
+      </div>
+      <div class="deal_roght_content">
+         <img src="./assets/img/ghee-png.png" alt="">
+      </div>
+   </div>
+</section>
+<section class="shipcontainer">
+   <div class="sipping_section">
+      
+      <div class="Shipping_ptoduct">
+         <div class="shippingprod">
+            <i class="ri-shopping-cart-fill"></i>
+         <h3>Select Ptoduct</h3>
+      </div>
+      <div class="divider_horizontal"></div>
+      </div>
+      <div class="Shipping_ptoduct">
+        <div class="shippingprod">
+         <i class="ri-bank-card-fill"></i>
+         <h3>Secure Payment</h3>
+      </div>
+      <div class="divider_horizontal"></div>
+      </div>
+      <div class="Shipping_ptoduct">
+         <div class="shippingprod">
+            <i class="ri-truck-fill"></i>
+         <h3>Fast Shipping</h3>
+         </div>
+         
+      </div>
+      
+   </div>
+   <div class="bottom_divider"></div>
+</section>
+
+<section id="our-mission" class="mission-section">
+   <div class="testimonial">
+      <div class="shadow"></div>
+      <span class="top border"></span>
+      <h1>Our Mission</h1>
+      <p>We are dedicated to producing the finest quality pure ghee while preserving the traditional methods. Our mission is to provide our customers with premium, authentic ghee that enhances the flavors of their meals and promotes a healthy lifestyle.</p>
+      <p class="source">&mdash;Pure Ghee</p>
+      <span class="bottom border"></span>
+   </div>
+</section>
+
+
+<footer>
+    <div class="footercontainer">
+    <div class="footer-content">
+       <div class="footer-section footerabout">
+          <h3>Pure Ghee</h3>
+          <p class="tagline">"Discover the Purity of Desi Ghee, Crafted for Your Culinary Delight"</p>
+       </div>
+ 
+       <div class="footer-section footerlinks">
+          <h2>Quick Links</h2>
+          <ul>
+          <li><a href="#">Home</a></li>
+          <!-- <li><a href="#">Deal</a></li> -->
+          <li><a href="./components/demoallproduct.html">Products</a></li>
+          <li><a href="#">Contact</a></li>
+          </ul>
+       </div>
+ 
+       <div class="footer-section fcontact">
+          <h2>Contact Us</h2>
+          <p class="footercontact">
+          Phone: +919782186238</p><br>
+          <p>Email: d1234567alchandsaini@gmail.com
+          </p>
+       </div>
     </div>
+    </div>
+ 
+    <div class="footer-bottom">
+    <p>&copy; 2023 @PureGhee. All Rights Reserved.</p>
+    </div>
+ </footer>
+ 
+      <!--=============== MAIN JS ===============-->
+      <script src="./assets/js/main.js"></script>
+      <script>
+         function togglePopup(event) {
+    event.preventDefault();
+    const popup = document.getElementById('user-popup');
+    const username = localStorage.getItem('username');  // Get the username
+    const popupContent = document.querySelector('.popup-content p');
+    popupContent.textContent = `Welcome, ${username || 'User'}!`; // Display the username
 
-    <script src="./app.js"></script>
-
-
-<script>
-  const baseURL = 'https://pure-ghee-api.onrender.com/api/auth';
-  
-  document.addEventListener('DOMContentLoaded', () => {
-    const loginForm = document.getElementById('login-form');
-    const signupForm = document.getElementById('signup-form');
-    let activeForm = 'login';  // Track the active form
-    
-    // Function to switch between login and sign-up forms
-    function switchForm() {
-      if (activeForm === 'login') {
-        signupForm.classList.remove('hidden');
-        loginForm.classList.add('hidden');
-        activeForm = 'signup';
-      } else {
-        loginForm.classList.remove('hidden');
-        signupForm.classList.add('hidden');
-        activeForm = 'login';
-      }
-    }
-    
-    loginForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const username = document.getElementById('login-username').value;
-      const password = document.getElementById('login-password').value;
-      
-      // Send AJAX request to login
-      fetch(`${baseURL}/login`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, password }),
-      })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log('Login response:', data);
-        if (data.message === 'Login successful') {
-          localStorage.setItem('username', username);
-          // Show a popup for successful login
-          alert('Login successful!');
-          // Redirect to another page after successful login
-          window.location.href = './components/home.html';  // Replace with your desired redirect URL
-        } else {
-          console.error('Login failed:', data.message);
-        }
-      })
-      .catch((error) => console.error('Login error:', error));
-    });
-    
-    signupForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const username = document.getElementById('signup-username').value;
-      const email = document.getElementById('signup-email').value;
-      const password = document.getElementById('signup-password').value;
-      
-      // Send AJAX request to register
-      fetch(`${baseURL}/register`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, email, password }),
-      })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log('Registration response:', data);
-        if (data.message === 'User registered successfully') {
-          // Show a popup for successful signup
-          alert('Signup successful! Please proceed to login.');
-          switchForm();  // Switch to login form after successful registration
-          console.log('Switched to login form after successful registration.');
-        } else {
-          console.error('Registration failed:', data.message);
-        }
-      })
-      .catch((error) => console.error('Registration error:', error));
-    });
-  });
-</script>
+    popup.style.display = (popup.style.display === 'block') ? 'none' : 'block';
+}
 
 
-  </body>
+      </script>
+   </body>
 </html>

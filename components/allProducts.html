@@ -13,6 +13,48 @@
                </head>
                <body>
                   <style>
+                     .popup {
+                       width: 250px;
+                       height: 150px;
+                       display: none;
+                       position: fixed;
+                       background:hsl(127, 20%, 18%); 
+                       top: 24%;
+                       right: 0;
+                       left: 90%;
+                       transform: translate(-50%, -50%);
+                      color: white;
+                       padding: 20px;
+                       box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+                   }
+                   
+                   .popup-close {
+                       float: right;
+                       cursor: pointer;
+                   }
+                   
+                   .popup-content {
+                       padding: 10px;
+                   }
+                   
+                   .popup-content p {
+              
+                       margin-top: 10px;
+                  text-align: center;
+                   }
+                   .popup-content button{
+                    color: white;
+                    margin-top: 40px;
+                    margin-left: 50px;
+                    border: none;
+                    padding: 8px 15px;
+                    text-transform: uppercase;
+                    background-color: #0a9737;
+                    letter-spacing: 1px;
+                   }
+                   
+                   </style>
+                  <style>
                      .quantity-selection {
                display: flex;
                flex-direction: row;
@@ -53,54 +95,68 @@
                }
 
                   </style>
-                  <header class="header">
+                    <header class="header">
                      <nav class="nav container">
                         <div class="nav__data">
                            <a href="#" class="nav__logo">
-                           Pure Ghee
+                             Pure Ghee
                            </a>
-                           <div  class="user_info large" id="user-info">
-                              <a href="#"><i class="ri-shopping-cart-2-line"></i></a>
-                              <a href="#"><i class="ri-user-3-line"></i></a>
+                           <div  class="user_info large" id="user-info"><a href="#"><i class="ri-shopping-cart-2-line"></i></a>
+                              <a href="#" onclick="togglePopup(event)"><i class="ri-user-3-line"></i></a>
                            </div>
                            <div class="nav__toggle" id="nav-toggle">
                               <i class="ri-menu-line nav__burger"></i>
                               <i class="ri-close-line nav__close"></i>
                            </div>
                         </div>
-
+            
                         <!--=============== NAV MENU ===============-->
                         <div class="nav__menu" id="nav-menu">
                            <ul class="nav__list">
                               <li><a href="./home.html" class="nav__link">Home</a></li>
+            
                               <li><a href="./allProducts.html" class="nav__link">Products</a></li>
+            
+                            
+                              <!--=============== DROPDOWN 2 ===============-->
                               <li class="dropdown__item">
-                                 <div class="nav__link">
-                                    Earn <i class="ri-arrow-down-s-line dropdown__arrow"></i>
-                                 </div>
-
-                                 <ul class="dropdown__menu">
+                                 <a href="./event.html" class="nav__link">
+                                    Event
+                                 </a>
+            
+                                 <!-- <ul class="dropdown__menu">
                                     <li>
                                        <a href="#" class="dropdown__link">
                                           <i class="ri-user-line"></i> Affiliate
-                                       </a>
+                                       </a>                          
                                     </li>
-
+            
                                     <li>
-                                       <a href="#" class="dropdown__link">
-                                          <i class="ri-bank-line"></i></i> Refer & Earn
+                                       <a href="" class="dropdown__link">
+                                          <i class="ri-bank-line"></i></i> 
                                        </a>
                                     </li>
-                                 </ul>
+            
+                                   
+                                 </ul> -->
                               </li>
-                              <li><a href="#" class="nav__link">Wallet</a></li>
+            
+                              <li><a href="../referAndEarn.html" class="nav__link"><i class="ri-bank-line"></i>Refer & Earn</a></li>
                            </ul>
                         </div>
-
+                        
                         <div  class="user_info1" id="user-info">
                            <a href="#"><i class="ri-shopping-cart-2-line"></i></a>
-                           <a href="#"><i class="ri-user-3-line"></i></a>
+                           <a href="#" onclick="togglePopup(event)"><i class="ri-user-3-line"></i></a>
                         </div>
+                        <div class="popup" id="user-popup">
+                           <span class="popup-close" onclick="togglePopup(event)">&times;</span>
+                           <div class="popup-content">
+                               <!-- User name and logout button -->
+                               <p>User Name</p>
+                               <button onclick="logout()">Logout</button>
+                           </div>
+                       </div>
                      </nav>
                   </header>
                   <section>
@@ -123,10 +179,10 @@
                      <div class="quantity-selection">
                         <label for="quantity">Select Quantity:</label>
                         <select id="quantity" name="quantity">
-                        <option value="500g /  ₹ 560">500gm /  ₹ 560</option>
-                        <option value="1kg /  ₹ 960">1kg /  ₹ 960</option>
-                        <option value="2kg /  ₹ 1860">2kg /  ₹ 1860</option>
-                        <option value="5kg /  ₹ 4260">5kg /  ₹ 4260</option>
+                        <option value="100ml /  ₹ 180">100ml /  ₹ 180</option>
+                        <option value="500ml /  ₹ 950">500ml /  ₹ 950</option>
+                        <option value="1kg /  ₹ 1799">1kg /  ₹ 1799</option>
+                        <!-- <option value="5kg /  ₹ 4260">5kg /  ₹ 4260</option> -->
                         </select>
                      </div>
                      
@@ -147,10 +203,10 @@
                         <div class="quantity-selection">
                            <label for="quantity">Select Quantity:</label>
                            <select id="bufalowquantity" name="quantity">
-                           <option value="500g /  ₹ 560">500gm /  ₹ 560</option>
-                           <option value="1kg /  ₹ 960">1kg /  ₹ 960</option>
-                           <option value="2kg /  ₹ 1560">2kg /  ₹ 1560</option>
-                           <option value="5kg /  ₹ 4560">5kg /  ₹ 4560</option>
+                           <option value="500ml /  ₹ 750">500ml /  ₹ 750</option>
+                           <option value="1kg /  ₹ 1399">1kg /  ₹ 1399</option>
+                           <!-- <option value="2kg /  ₹ 1560">2kg /  ₹ 1560</option>
+                           <option value="5kg /  ₹ 4560">5kg /  ₹ 4560</option> -->
                            </select>
                         </div>
                         <div class="card_footer">
@@ -220,10 +276,10 @@
                         <div class="quantity-selection">
                            <label for="quantity">Select Quantity:</label>
                            <select id="honeyquantity" name="quantity">
-                           <option value="150g /  ₹ 230">150gm /  ₹ 230</option>
-                           <option value="250g /  ₹ 560">250gm /  ₹ 560</option>
-                           <option value="500g /  ₹ 860">500gm /  ₹ 860</option>
-                           <option value="1kg /  ₹ 1460">1kg /  ₹ 1460</option>
+                           <!-- <option value="150g /  ₹ 230">150gm /  ₹ 230</option>
+                           <option value="250g /  ₹ 560">250gm /  ₹ 560</option> -->
+                           <option value="500ml /  ₹ 399">500ml /  ₹ 399</option>
+                           <option value="1kg /  ₹ 779">1kg /  ₹ 779</option>
                            </select>
                         </div>
                         <div class="card_footer">
@@ -245,10 +301,10 @@
                         <div class="quantity-selection">
                            <label for="quantity">Select Quantity:</label>
                            <select id="pipplequantity" name="quantity">
-                              <option value="150g /  ₹ 50">150gm /  ₹ 50</option>
-                              <option value="250g /  ₹ 120">250gm /  ₹ 120</option>
-                              <option value="500g /  ₹ 230">500gm /  ₹ 230</option>
-                              <option value="1kg /  ₹ 450">1kg /  ₹ 450</option>
+                              <!-- <option value="150g /  ₹ 50">150gm /  ₹ 50</option>
+                              <option value="250g /  ₹ 120">250gm /  ₹ 120</option> -->
+                              <option value="500g /  ₹ 279">500gm /  ₹ 279</option>
+                              <option value="1kg /  ₹ 499">1kg /  ₹ 499</option>
                            </select>
                         </div>
                         <div class="card_footer">
@@ -398,7 +454,7 @@
                   </script>
                      -->
                      
-                     <script>
+                     <!-- <script>
                         function passProductDetails(productName, productImage) {
                            let quantityElementId;
                   
@@ -439,6 +495,45 @@
                            localStorage.setItem('productDetails', JSON.stringify(productDetails));
                            window.location.href = 'order.html';
                         }
+                  </script> -->
+                  <script>
+                     function togglePopup(event) {
+                event.preventDefault();
+                const popup = document.getElementById('user-popup');
+                const username = localStorage.getItem('username');  // Get the username
+                const popupContent = document.querySelector('.popup-content p');
+                popupContent.textContent = `Welcome, ${username || 'User'}!`; // Display the username
+            
+                popup.style.display = (popup.style.display === 'block') ? 'none' : 'block';
+            }
+            
+            function logout() {
+                // Clear the stored username from localStorage
+                localStorage.removeItem('username');
+            
+                // Redirect to the login page
+                window.location.href = '../register.html';
+            }
+            
+            document.addEventListener('DOMContentLoaded', () => {
+                const userPopup = document.getElementById('user-popup');
+                
+                // Check if the user is logged in (has a stored username)
+                const storedUsername = localStorage.getItem('username');
+                
+                if (!storedUsername) {
+                    // User is not logged in, redirect to the login page
+                    window.location.href = '../register.html';
+                }
+                
+                // Display the stored username in the popup
+                const userNameElement = document.querySelector('.popup-content p');
+                if (userNameElement) {
+                    userNameElement.textContent = storedUsername;
+                }
+            });
+            
+            
                   </script>
                   <script>
                      function updatePrice(productName) {
@@ -491,6 +586,65 @@
                          }
                      }
                  </script>
+                 <script>
+                  // Simulated login status (replace with your actual login logic)
+                  let isLoggedIn = false;
+                
+                  // Function to check if the user is logged in (replace with your own logic)
+                  function checkLoginStatus() {
+                     const storedUsername = localStorage.getItem('username');
+  return storedUsername !== null; 
+                  }
+                
+                  // Function to handle buying a product
+                  function passProductDetails(productName, productImage, quantityElementId) {
+                    if (checkLoginStatus()) {
+                      // User is logged in, proceed with the "Buy Now" action
+                      switch (productName) {
+                              case "Cow's Pure Ghee":
+                                    quantityElementId = 'quantity';
+                                    break;
+                              case "Buffalow's Pure Ghee":
+                                    quantityElementId = 'bufalowquantity';
+                                    break;
+                              case "Cow's Dung-Cake":
+                                    quantityElementId = 'cowDungquantity';
+                                    break;
+                              case "Buffalow's Dung-Cake":
+                                    quantityElementId = 'buffalowDungquantity';
+                                    break;
+                              case "Honey":
+                                    quantityElementId = 'honeyquantity';
+                                    break;
+                              case "Pipple ki lakdi":
+                                    quantityElementId = 'pipplequantity';
+                                    break;
+                              // Add more cases for other products if needed
+                              default:
+                                    console.error('Unknown product:', productName);
+                                    return;
+                           }
+                  
+                           const quantity = document.getElementById(quantityElementId).value;
+                  
+                           const productDetails = {
+                              productName,
+                              quantity,
+                              productImage
+                           };
+                  
+                           localStorage.setItem('productDetails', JSON.stringify(productDetails));
+                           window.location.href = 'order.html';
+                        
+                    } else {
+                      // User is not logged in, redirect to the login page
+                      alert('You need to be logged in to buy products.');
+                      // Redirect to the login page
+                      window.location.href = '../register.html'; // Replace with your login page URL
+                    }
+                  }
+                </script>
+                
                  
                </body>
                </html>
