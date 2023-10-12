@@ -278,12 +278,12 @@ display: none;
          <img src="./assets/img/pipal-removebg-preview.png">
       </div>
       <div class="card_right ">
-         <span>Pipple's twig</span>
-         <h3>pippal ki lakdi</h3>
+         <span>Pipal's twig</span>
+         <h3>Pipal ki lakdi</h3>
          <p>Enhance your spiritual connection during puja with our sacred Pipal's Twig, symbolizing purity and auspiciousness for divine rituals </p>
          <div class="quantity-selection">
             <label for="quantity">Select Quantity:</label>
-            <select id="pipplequantity" name="quantity">
+            <select id="Pipalquantity" name="quantity">
                <!-- <option value="150g /  ₹ 50">150gm /  ₹ 50</option>
                <option value="250g /  ₹ 120">250gm /  ₹ 120</option> -->
                <option value="500g /  ₹ 279">500gm /  ₹ 279</option>
@@ -292,7 +292,7 @@ display: none;
          </div>
          <div class="card_footer">
            
-            <a href="#" class="btn buy-now" onclick="passProductDetails('Pipple ki lakdi', './assets/img/pipal-removebg-preview.png')">
+            <a href="#" class="btn buy-now" onclick="passProductDetails('Pipal ki lakdi', './assets/img/pipal-removebg-preview.png')">
                buy now
             </a>
          </div>
@@ -420,7 +420,7 @@ display: none;
          window.location.href = 'order.html';
       }
       function passProductDetails(productName, productImage) {
-         const quantity = document.getElementById('pipplequantity').value;
+         const quantity = document.getElementById('Pipalquantity').value;
       
          const productDetails = {
             productName,
@@ -458,8 +458,8 @@ display: none;
                case "Honey":
                      quantityElementId = 'honeyquantity';
                      break;
-               case "Pipple ki lakdi":
-                     quantityElementId = 'pipplequantity';
+               case "Pipal ki lakdi":
+                     quantityElementId = 'Pipalquantity';
                      break;
                // Add more cases for other products if needed
                default:

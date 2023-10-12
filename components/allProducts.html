@@ -226,10 +226,10 @@
                         <div class="quantity-selection">
                            <label for="quantity">Select Quantity:</label>
                            <select id="cowDungquantity" name="quantity">
-                           <option value="5 Pis. /  ₹ 30">5 Pis. /  ₹ 30</option>
-                           <option value="10 Pis. /  ₹ 50">10 Pis. /  ₹ 50</option>
-                           <option value="20 Pis. /  ₹ 100">20 Pis. /  ₹ 100</option>
-                           <option value="50 Pis. /  ₹ 200">50 Pis. /  ₹ 200</option>
+                           <!-- <option value="5 Pis. /  ₹ 30">5 Pis. /  ₹ 30</option> -->
+                           <option value="10 Pis. /  ₹ 199">10 Pis. /  ₹199</option>
+                           <option value="30 Pis. /  ₹ 350">30 Pis. /  ₹ 350</option>
+                           <!-- <option value="50 Pis. /  ₹ 200">50 Pis. /  ₹ 200</option> -->
                            </select>
                         </div>
                         <div class="card_footer">
@@ -251,10 +251,10 @@
                         <div class="quantity-selection">
                            <label for="quantity">Select Quantity:</label>
                            <select id="buffalowDungquantity" name="quantity">
-                              <option value="5 Pis. /  ₹ 30">5 Pis. /  ₹ 30</option>
-                           <option value="10 Pis. /  ₹ 50">10 Pis. /  ₹ 50</option>
-                           <option value="20 Pis. /  ₹ 100">20 Pis. /  ₹ 100</option>
-                           <option value="50 Pis. /  ₹ 200">50 Pis. /  ₹ 200</option>
+                              <!-- <option value="5 Pis. /  ₹ 30">5 Pis. /  ₹ 30</option> -->
+                           <option value="15 Pis. /  ₹ 199">15 Pis. /  ₹ 199</option>
+                           <option value="40 Pis. /  ₹ 400">40 Pis. /  ₹ 400</option>
+                           <!-- <option value="50 Pis. /  ₹ 200">50 Pis. /  ₹ 200</option> -->
                            </select>
                         </div>
                         <div class="card_footer">
@@ -295,12 +295,12 @@
                         <img src="./assets/img/pipal-removebg-preview.png">
                      </div>
                      <div class="card_right ">
-                        <span>Pipple's twig</span>
-                        <h3>pippal ki lakdi</h3>
+                        <span>Pipal's twig</span>
+                        <h3>Pipal ki lakdi</h3>
                         <p>Enhance your spiritual connection during puja with our sacred Pipal's Twig, symbolizing purity and auspiciousness for divine rituals </p>
                         <div class="quantity-selection">
                            <label for="quantity">Select Quantity:</label>
-                           <select id="pipplequantity" name="quantity">
+                           <select id="Pipalquantity" name="quantity">
                               <!-- <option value="150g /  ₹ 50">150gm /  ₹ 50</option>
                               <option value="250g /  ₹ 120">250gm /  ₹ 120</option> -->
                               <option value="500g /  ₹ 279">500gm /  ₹ 279</option>
@@ -309,7 +309,7 @@
                         </div>
                         <div class="card_footer">
                           
-                           <a href="#" class="btn buy-now" onclick="passProductDetails('Pipple ki lakdi', './assets/img/pipal-removebg-preview.png')">
+                           <a href="#" class="btn buy-now" onclick="passProductDetails('Pipal ki lakdi', './assets/img/pipal-removebg-preview.png')">
                               buy now
                            </a>
                         </div>
@@ -437,7 +437,7 @@
                         window.location.href = 'order.html';
                      }
                      function passProductDetails(productName, productImage) {
-                        const quantity = document.getElementById('pipplequantity').value;
+                        const quantity = document.getElementById('Pipalquantity').value;
                      
                         const productDetails = {
                            productName,
@@ -475,8 +475,8 @@
                               case "Honey":
                                     quantityElementId = 'honeyquantity';
                                     break;
-                              case "Pipple ki lakdi":
-                                    quantityElementId = 'pipplequantity';
+                              case "Pipal ki lakdi":
+                                    quantityElementId = 'Pipalquantity';
                                     break;
                               // Add more cases for other products if needed
                               default:
@@ -556,8 +556,8 @@
                              case "Honey":
                                  priceElement = document.getElementById('honeyPrice');
                                  break;
-                             case "Pipple ki lakdi":
-                                 priceElement = document.getElementById('pipplePrice');
+                             case "Pipal ki lakdi":
+                                 priceElement = document.getElementById('PipalPrice');
                                  break;
                              default:
                                  console.error('Unknown product:', productName);
@@ -616,8 +616,8 @@
                               case "Honey":
                                     quantityElementId = 'honeyquantity';
                                     break;
-                              case "Pipple ki lakdi":
-                                    quantityElementId = 'pipplequantity';
+                              case "Pipal ki lakdi":
+                                    quantityElementId = 'Pipalquantity';
                                     break;
                               // Add more cases for other products if needed
                               default:
